@@ -1,0 +1,30 @@
+# Workspace metadata
+.metadata/
+
+# Build outputs (CCS)
+**/Debug/
+**/Release/
+**/C*_RAM/
+**/C*_FLASH/
+
+# Toolchain artifacts
+*.o
+*.obj
+*.d
+*.out
+*.elf
+*.hex
+*.bin
+*.map
+*.lib
+*.a
+*.lst
+
+# Clangd generated
+**/.clangd/
+**/.clangd
+**/compile_commands.json
+
+
+# Launch configs (per-user)
+*.launch
