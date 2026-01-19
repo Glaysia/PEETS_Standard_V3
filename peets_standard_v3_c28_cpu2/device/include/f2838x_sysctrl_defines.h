@@ -1,14 +1,10 @@
-//#############################################################################
+//###########################################################################
 //
-// FILE:   empty_c28x_dual_driverlib_main_cpu1.c
+// FILE:	f2838x_sysctrl_defines.h
 //
-// TITLE:  Empty Project
-//! \addtogroup driver_dual_example_list
-//! <h1> CPU1 Empty Project Example >/h1>
-//!
-//! This example is an empty project setup for Driverlib development for CPU1.
+// TITLE:	F2838x LPM support definitions
 //
-//#############################################################################
+//###########################################################################
 //
 //
 // 
@@ -44,22 +40,19 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // $
-//#############################################################################
+//###########################################################################
+
+#ifndef F2838x_SYSCTRL_DEFINES_H
+#define F2838x_SYSCTRL_DEFINES_H
 
 //
-// Included Files
+// Defines
 //
-#include "driverlib.h"
-#include "device.h"
+#define LPM_IDLE    0x0
+#define LPM_STANDBY 0x1
+
+#endif  // end of F2838x_SYSCTRL_DEFINES_H definition
 
 //
-// Main
-//
-void main(void)
-{
-
-}
-
-//
-// End of File
+// End of file
 //

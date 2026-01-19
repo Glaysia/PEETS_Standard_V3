@@ -45,7 +45,7 @@
 //
 // Included Files
 //
-#include "device.h"
+#include "include/device.h"
 
 #ifdef CMDTOOL
 #include "device_cmd.h"
