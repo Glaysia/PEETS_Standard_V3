@@ -1,0 +1,120 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "_Build CPU1_RAM (RAM boot)",
+      "type": "shell",
+      "command": "/opt/ti/ccs2040/ccs/utils/bin/gmake",
+      "windows": {
+        "command": "C:\\ti\\ccs2040\\ccs\\utils\\bin\\gmake.exe"
+      },
+      "args": [
+        "-C",
+        "${workspaceFolder}/peets_standard_v3_c28_cpu1/CPU1_RAM",
+        "-f",
+        "makefile",
+        "all",
+        "-O"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "_Build CPU2_RAM (RAM boot)",
+      "type": "shell",
+      "command": "/opt/ti/ccs2040/ccs/utils/bin/gmake",
+      "windows": {
+        "command": "C:\\ti\\ccs2040\\ccs\\utils\\bin\\gmake.exe"
+      },
+      "args": [
+        "-C",
+        "${workspaceFolder}/peets_standard_v3_c28_cpu2/CPU2_RAM",
+        "-f",
+        "makefile",
+        "all",
+        "-O"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build all (CPU1_RAM + CPU2_RAM)",
+      "type": "shell",
+      "command": "/bin/true",
+      "windows": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "exit",
+          "0"
+        ]
+      },
+      "dependsOn": [
+        "_Build CPU1_RAM (RAM boot)",
+        "_Build CPU2_RAM (RAM boot)"
+      ],
+      "dependsOrder": "sequence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "_Clean CPU1_RAM (RAM boot)",
+      "type": "shell",
+      "command": "/opt/ti/ccs2040/ccs/utils/bin/gmake",
+      "windows": {
+        "command": "C:\\ti\\ccs2040\\ccs\\utils\\bin\\gmake.exe"
+      },
+      "args": [
+        "-C",
+        "${workspaceFolder}/peets_standard_v3_c28_cpu1/CPU1_RAM",
+        "-f",
+        "makefile",
+        "clean",
+        "-O"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "_Clean CPU2_RAM (RAM boot)",
+      "type": "shell",
+      "command": "/opt/ti/ccs2040/ccs/utils/bin/gmake",
+      "windows": {
+        "command": "C:\\ti\\ccs2040\\ccs\\utils\\bin\\gmake.exe"
+      },
+      "args": [
+        "-C",
+        "${workspaceFolder}/peets_standard_v3_c28_cpu2/CPU2_RAM",
+        "-f",
+        "makefile",
+        "clean",
+        "-O"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean all (CPU1_RAM + CPU2_RAM)",
+      "type": "shell",
+      "command": "/bin/true",
+      "windows": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "exit",
+          "0"
+        ]
+      },
+      "dependsOn": [
+        "_Clean CPU1_RAM (RAM boot)",
+        "_Clean CPU2_RAM (RAM boot)"
+      ],
+      "dependsOrder": "sequence",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
