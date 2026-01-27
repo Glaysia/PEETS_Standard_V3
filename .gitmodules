@@ -1,0 +1,3 @@
+[submodule "sysconfig"]
+	path = sysconfig
+	url = https://github.com/Glaysia/sysconfig_project.git
