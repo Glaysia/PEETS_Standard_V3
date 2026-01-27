@@ -79,7 +79,7 @@
                         </toolChain>
                     </folderInfo>
                     <sourceEntries>
-                        <entry excluding="device/driverlib_cm|2838x_FLASH_lnk_cm.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="2838x_FLASH_lnk_cm.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                     </sourceEntries>
                 </configuration>
             </storageModule>
@@ -161,7 +161,7 @@
                         </toolChain>
                     </folderInfo>
                     <sourceEntries>
-                        <entry excluding="device/driverlib_cm|2838x_RAM_lnk_cm.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="2838x_RAM_lnk_cm.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                     </sourceEntries>
                 </configuration>
             </storageModule>
