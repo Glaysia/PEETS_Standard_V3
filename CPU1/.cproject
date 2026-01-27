@@ -61,6 +61,8 @@
                                 <option id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.OPT_LEVEL.967284245" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.OPT_LEVEL.off" valueType="enumerated"/>
                                 <option id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.DIAG_SUPPRESS.1388438027" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.DIAG_SUPPRESS" valueType="stringList">
                                     <listOptionValue value="10063"/>
+                                    <listOptionValue value="169"/>
+                                    <listOptionValue value="1853"/>
                                 </option>
                             </tool>
                             <tool id="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.linkerDebug.1382925446" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.linkerDebug">
@@ -156,6 +158,8 @@
                                 <option id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.OPT_LEVEL.2000371451" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.OPT_LEVEL.off" valueType="enumerated"/>
                                 <option id="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.DIAG_SUPPRESS.874556406" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.compilerID.DIAG_SUPPRESS" valueType="stringList">
                                     <listOptionValue value="10063"/>
+                                    <listOptionValue value="169"/>
+                                    <listOptionValue value="1853"/>
                                 </option>
                             </tool>
                             <tool id="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.linkerDebug.2055816038" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_22.6.exe.linkerDebug">

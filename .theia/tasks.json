@@ -10,7 +10,7 @@
       },
       "args": [
         "-C",
-        "${workspaceFolder}/peets_standard_v3_c28_cpu1/CPU1_RAM",
+        "${workspaceFolder}/CPU1/CPU1_RAM",
         "-f",
         "makefile",
         "all",
@@ -28,7 +28,7 @@
       },
       "args": [
         "-C",
-        "${workspaceFolder}/peets_standard_v3_c28_cpu2/CPU2_RAM",
+        "${workspaceFolder}/CPU2/CPU2_RAM",
         "-f",
         "makefile",
         "all",
@@ -69,7 +69,7 @@
       },
       "args": [
         "-C",
-        "${workspaceFolder}/peets_standard_v3_c28_cpu1/CPU1_RAM",
+        "${workspaceFolder}/CPU1/CPU1_RAM",
         "-f",
         "makefile",
         "clean",
@@ -87,7 +87,7 @@
       },
       "args": [
         "-C",
-        "${workspaceFolder}/peets_standard_v3_c28_cpu2/CPU2_RAM",
+        "${workspaceFolder}/CPU2/CPU2_RAM",
         "-f",
         "makefile",
         "clean",
