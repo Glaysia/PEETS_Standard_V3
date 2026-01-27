@@ -115,6 +115,42 @@
       "dependsOrder": "sequence",
       "group": "build",
       "problemMatcher": []
+    },
+    {
+      "label": "_Build CM_FLASH (Flash boot)",
+      "type": "shell",
+      "command": "/opt/ti/ccs2040/ccs/utils/bin/gmake",
+      "windows": {
+        "command": "C:\\ti\\ccs2040\\ccs\\utils\\bin\\gmake.exe"
+      },
+      "args": [
+        "-C",
+        "${workspaceFolder}/CM/CM_FLASH",
+        "-f",
+        "makefile",
+        "all",
+        "-O"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "_Clean CM_FLASH (Flash boot)",
+      "type": "shell",
+      "command": "/opt/ti/ccs2040/ccs/utils/bin/gmake",
+      "windows": {
+        "command": "C:\\ti\\ccs2040\\ccs\\utils\\bin\\gmake.exe"
+      },
+      "args": [
+        "-C",
+        "${workspaceFolder}/CM/CM_FLASH",
+        "-f",
+        "makefile",
+        "clean",
+        "-O"
+      ],
+      "group": "build",
+      "problemMatcher": []
     }
   ]
 }

@@ -43,6 +43,10 @@
 //#############################################################################
 
 #include <stdint.h>
+#include "inc/hw_types.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_nmi.h"
+#include "inc/hw_flash.h"
 
 //
 // Forward declaration of the default fault handlers.
