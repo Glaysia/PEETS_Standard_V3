@@ -49,15 +49,20 @@
 //
 // Included Files
 //
-#include "driverlib.h"
-#include "device.h"
+#include "user/inc/peets.h"
 
+extern Peets g_peets;
 //
 // Main
 //
 void main(void)
 {
+    g_peets.peets_init();
 
+    
+    while (1) {
+        __asm(" NOP");
+    }
 }
 
 //
