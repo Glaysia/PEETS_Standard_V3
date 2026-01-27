@@ -17,11 +17,16 @@
 //###########################################################################
 
 
+#include "device.h"
 #include "include/f28388d_project.h"
+
 #include <stdio.h>
 
 void main(void)
 {
+    GPIO_setPinMuxConfig(); // Configure pinmux settings
+
+    Device_bootCM(BOOTMODE_BOOT_TO_S0RAM);
     while(1)
     {
         asm(" nop");

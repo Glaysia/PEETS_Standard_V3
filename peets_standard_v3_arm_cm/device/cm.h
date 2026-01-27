@@ -47,6 +47,10 @@
 //
 #include "driverlib_cm.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 //*****************************************************************************
 //
 // Defines related to clock configuration. This frequency will be the CM clock
@@ -112,3 +116,7 @@ extern uint16_t RamfuncsRunSize;
 extern void CM_init(void);
 extern void CM_enableAllPeripherals(void);
 extern void __error__(const char *filename, uint32_t line);
+
+#ifdef __cplusplus
+}
+#endif

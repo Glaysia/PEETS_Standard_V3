@@ -10,6 +10,7 @@ extern "C" {
 #include "f2838x_cla_typedefs.h"  // F2838x CLA Type definitions
 #include "f2838x_device.h"        // F2838x Headerfile Include File
 #include "f2838x_examples.h"      // F2838x Examples Include File
+#include "../sysconfig/pinmux.h"
 
 #ifdef __cplusplus
 }

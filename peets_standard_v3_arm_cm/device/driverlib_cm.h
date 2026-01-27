@@ -44,6 +44,10 @@
 #ifndef DRIVERLIB_CM_H
 #define DRIVERLIB_CM_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "inc/hw_memmap.h"
 
 #include "aes.h"
@@ -69,5 +73,9 @@
 #include "uart.h"
 #include "udma.h"
 #include "usb.h"
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // end of DRIVERLIB_CM_H definition
