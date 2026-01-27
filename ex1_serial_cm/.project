@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ex1_serial_cm</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ti.ccstudio.core.ccsNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>driverlib_cm.lib</name>
+			<type>1</type>
+			<locationURI>COM_TI_C2000WARE_INSTALL_DIR/driverlib/f2838x/driverlib_cm/ccs/Debug/driverlib_cm.lib</locationURI>
+		</link>
+		<link>
+			<name>usblib_cm.lib</name>
+			<type>1</type>
+			<locationURI>COM_TI_C2000WARE_INSTALL_DIR/libraries/communications/usb/f2838x/lib/usblib_cm.lib</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>C2000WARE_DLIB_ROOT</name>
+			<value>$%7BCOM_TI_C2000WARE_INSTALL_DIR%7D/driverlib/f2838x/driverlib_cm</value>
+		</variable>
+		<variable>
+			<name>USB_LIB_ROOT</name>
+			<value>$%7BCOM_TI_C2000WARE_INSTALL_DIR%7D/libraries/communications/usb/f2838x/include</value>
+		</variable>
+	</variableList>
+</projectDescription>
