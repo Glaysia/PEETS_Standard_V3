@@ -116,6 +116,15 @@ char *g_pcStatus;
 //****************************************************************************
 static volatile bool g_bUSBConfigured = false;
 
+//****************************************************************************
+//
+// Flag set by CPU1 to trigger a "hello peets" message.
+//
+//****************************************************************************
+#pragma DATA_SECTION(g_uartHelloFlag, "MSGRAM_CPU1_TO_CM");
+volatile uint16_t g_uartHelloFlag;
+static const uint8_t g_helloMsg[] = "hello peets\r\n";
+
 //*****************************************************************************
 //
 // Internal function prototypes.
@@ -1017,6 +1026,7 @@ main(void)
     // Not configured initially.
     //
     g_bUSBConfigured = false;
+    g_uartHelloFlag = 0U;
 
     //
     // Set the default UART configuration.
@@ -1078,6 +1088,21 @@ main(void)
     //
     while(1)
     {
+        //
+        // If CPU1 raised the flag, send "hello peets" to the USB host.
+        //
+        if((g_uartHelloFlag != 0U) && g_bUSBConfigured)
+        {
+            if(USBBufferSpaceAvailable((tUSBBuffer *)&g_sTxBuffer) >=
+               (sizeof(g_helloMsg) - 1U))
+            {
+                USBBufferWrite((tUSBBuffer *)&g_sTxBuffer,
+                               (uint8_t *)g_helloMsg,
+                               (sizeof(g_helloMsg) - 1U));
+                g_uartHelloFlag = 0U;
+            }
+        }
+
         //
         // Have we been asked to update the status display?
         //

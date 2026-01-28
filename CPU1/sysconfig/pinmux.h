@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-//  pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/27/2026 at 2:18:57 PM.
+//  pinmux.h - Created using TI Pinmux 1.26.2+4477 on 1/27/2026 at 6:18:44 PM.
 //
 //*****************************************************************************
 //
@@ -95,13 +95,11 @@
 //
 // Port B mux register values
 //
-// Pin D19 (GPIO42) to UARTA_TX (mode 11)
-// Pin C19 (GPIO43) to UARTA_RX (mode 11)
-#define GPBMUX1_MASK		0x00f00000
+#define GPBMUX1_MASK		0x00000000
 #define GPBMUX2_MASK		0x00000000
-#define GPBMUX1_VALUE		0x00f00000
+#define GPBMUX1_VALUE		0x00000000
 #define GPBMUX2_VALUE		0x00000000
-#define GPBGMUX1_VALUE		0x00a00000
+#define GPBGMUX1_VALUE		0x00000000
 #define GPBGMUX2_VALUE		0x00000000
 
 //
@@ -144,10 +142,10 @@
 //
 // Port B analog mode register values
 //
-// Pin D19 (GPIO42) to UARTA_TX (mode 11)
-// Pin C19 (GPIO43) to UARTA_RX (mode 11)
+// Pin D19 (GPIO42) to USB0DM (mode ALT)
+// Pin C19 (GPIO43) to USB0DP (mode ALT)
 #define GPBAMSEL_MASK		0x00000c00
-#define GPBAMSEL_VALUE		0x00000000
+#define GPBAMSEL_VALUE		0x00000c00
 
 //*****************************************************************************
 //
@@ -155,13 +153,5 @@
 // corresponding registers. This function is found in pinmux.c. Its use is
 // completely optional.
 //
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 //*****************************************************************************
 extern void GPIO_setPinMuxConfig(void);
-
-#ifdef __cplusplus
-} // extern "C"
-#endif

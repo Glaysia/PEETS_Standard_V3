@@ -50,19 +50,57 @@
 // Included Files
 //
 #include "user/inc/peets.h"
+#include "driverlib.h"
+#include "device.h"
+#include "cputimer.h"
 
-extern Peets g_peets;
+
+// extern Peets g_peets;
+
+#pragma DATA_SECTION(g_uartHelloFlag, "MSGRAM_CPU_TO_CM");
+volatile uint16_t g_uartHelloFlag;
+
+__interrupt void cpuTimer0ISR(void);
 //
 // Main
 //
 void main(void)
 {
-    g_peets.peets_init();
+    // g_peets.peets_init();
+    only_c_init();
+    Interrupt_initModule();
+    Interrupt_initVectorTable();
 
-    
+    g_uartHelloFlag = 0U;
+
+    CPUTimer_setPreScaler(CPUTIMER0_BASE, 0U);
+    CPUTimer_setPeriod(CPUTIMER0_BASE, DEVICE_SYSCLK_FREQ);
+    CPUTimer_setEmulationMode(CPUTIMER0_BASE,
+                              CPUTIMER_EMULATIONMODE_STOPAFTERNEXTDECREMENT);
+    CPUTimer_reloadTimerCounter(CPUTIMER0_BASE);
+
+    Interrupt_register(INT_TIMER0, &cpuTimer0ISR);
+    CPUTimer_enableInterrupt(CPUTIMER0_BASE);
+    Interrupt_enable(INT_TIMER0);
+
+    CPUTimer_startTimer(CPUTIMER0_BASE);
+
+    EINT;
+    ERTM;
+
     while (1) {
         __asm(" NOP");
     }
+}
+
+__interrupt void cpuTimer0ISR(void)
+{
+    if (g_uartHelloFlag == 0U) {
+        g_uartHelloFlag = 1U;
+    }
+
+    CPUTimer_clearOverflowFlag(CPUTIMER0_BASE);
+    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP1);
 }
 
 //
