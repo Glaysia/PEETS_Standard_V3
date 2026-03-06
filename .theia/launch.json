@@ -27,15 +27,6 @@
                 "name": "CPU2",
                 "resourceId": "/CPU2"
             }
-        },
-        {
-            "name": "ex1_serial_cm",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "ex1_serial_cm",
-                "resourceId": "/ex1_serial_cm"
-            }
         }
     ]
 }
