@@ -2,7 +2,7 @@
 //
 // Included Files
 //
-#include "device.h"
+#include "device_not_editable/device.h"
 
 #ifdef CMDTOOL
 #include "device_cmd.h"

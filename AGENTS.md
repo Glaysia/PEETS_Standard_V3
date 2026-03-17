@@ -19,6 +19,12 @@
 - `.c`를 `.cc`로, 또는 `.cc`를 `.c`로 바꾸지 않는다. 언어 모드 차이를 검증한 경우만 예외다.
 - C와 C++ 소스는 기존 레이아웃을 유지한다. C28x 툴체인에서 언어 혼합은 바로 빌드 문제로 이어진다.
 
+## 검색 도구 규칙
+- 이 환경에서는 `RIPGREP_CONFIG_PATH`가 CCS가 만든 잘못된 ripgrep 설정 파일을 가리킬 수 있다.
+- 그 상태에서는 `rg pattern path` 형태의 기본 검색이 깨져서 패턴을 파일명처럼 해석할 수 있다.
+- `rg` 사용 시 기본 명령은 항상 `env -u RIPGREP_CONFIG_PATH rg ...` 형태로 실행한다.
+- 검색 실패가 이상하면 먼저 `printf '%s\n' "$RIPGREP_CONFIG_PATH"`로 환경변수를 확인한다.
+
 ## Bring-up 순서
 - 1단계는 `CPU1` 단독 부팅 확인이다.
 - 이 단계에서 먼저 클럭, watchdog, GPIO 기본 상태, 타이머 또는 heartbeat를 확인한다.

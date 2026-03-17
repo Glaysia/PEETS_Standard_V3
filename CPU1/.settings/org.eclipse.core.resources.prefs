@@ -1,9 +1,10 @@
 eclipse.preferences.version=1
-encoding//CPU1_RAM/device_do_not_edit/subdir_rules.mk=UTF-8
-encoding//CPU1_RAM/device_do_not_edit/subdir_vars.mk=UTF-8
+encoding//CPU1_RAM/device_not_editable/subdir_rules.mk=UTF-8
+encoding//CPU1_RAM/device_not_editable/subdir_vars.mk=UTF-8
 encoding//CPU1_RAM/makefile=UTF-8
-encoding//CPU1_RAM/source_you_can_edit_here/subdir_rules.mk=UTF-8
-encoding//CPU1_RAM/source_you_can_edit_here/subdir_vars.mk=UTF-8
+encoding//CPU1_RAM/objects.mk=UTF-8
+encoding//CPU1_RAM/source_editable/subdir_rules.mk=UTF-8
+encoding//CPU1_RAM/source_editable/subdir_vars.mk=UTF-8
 encoding//CPU1_RAM/sources.mk=UTF-8
 encoding//CPU1_RAM/subdir_rules.mk=UTF-8
 encoding//CPU1_RAM/subdir_vars.mk=UTF-8
