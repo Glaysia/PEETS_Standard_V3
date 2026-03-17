@@ -1,0 +1,13 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 0
+BreakBeforeBraces: Allman
+SortIncludes: Never
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignTrailingComments: true
+PointerAlignment: Right
+SpaceBeforeParens: ControlStatements
+KeepEmptyLinesAtTheStartOfBlocks: false

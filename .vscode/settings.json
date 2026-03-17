@@ -1,0 +1,37 @@
+{
+  "clangd.arguments": [
+    "--background-index",
+    "--compile-commands-dir=CPU1/CPU1_RAM/.clangd",
+    "--query-driver=/home/harry/ti/ti-cgt-c2000_25.11.0.LTS/bin/*",
+    "--header-insertion=never",
+    "--pch-storage=memory",
+    "-j=4"
+  ],
+  "clangd.onConfigChanged": "restart",
+  "editor.defaultFormatter": "xaver.clang-format",
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "[h]": {
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnSave": false,
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "files.associations": {
+    "*.cmd": "plaintext"
+  },
+  "search.exclude": {
+    "**/CPU1_RAM": true,
+    "**/CPU2_RAM": true
+  },
+  "files.watcherExclude": {
+    "**/CPU1_RAM/**": true,
+    "**/CPU2_RAM/**": true
+  }
+}
