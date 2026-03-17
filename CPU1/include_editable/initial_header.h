@@ -4,4 +4,6 @@
 #include "device_not_editable/driverlib.h"
 #include "device_not_editable/device.h"
 
+#include "include_editable/pinmux.h"
+
 #endif

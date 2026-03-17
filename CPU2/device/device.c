@@ -1,46 +1,46 @@
-//#############################################################################
+// #############################################################################
 //
-// FILE:   device.c
+//  FILE:   device.c
 //
-// TITLE:  Device setup for examples.
+//  TITLE:  Device setup for examples.
 //
-//#############################################################################
+// #############################################################################
 //
 //
-// 
-// C2000Ware v6.00.01.00
 //
-// Copyright (C) 2024 Texas Instruments Incorporated - http://www.ti.com
+//  C2000Ware v6.00.01.00
 //
-// Redistribution and use in source and binary forms, with or without 
-// modification, are permitted provided that the following conditions 
-// are met:
-// 
-//   Redistributions of source code must retain the above copyright 
-//   notice, this list of conditions and the following disclaimer.
-// 
-//   Redistributions in binary form must reproduce the above copyright
-//   notice, this list of conditions and the following disclaimer in the 
-//   documentation and/or other materials provided with the   
-//   distribution.
-// 
-//   Neither the name of Texas Instruments Incorporated nor the names of
-//   its contributors may be used to endorse or promote products derived
-//   from this software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
-// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
-// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
-// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
-// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
-// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-// $
-//#############################################################################
+//  Copyright (C) 2024 Texas Instruments Incorporated - http://www.ti.com
+//
+//  Redistribution and use in source and binary forms, with or without
+//  modification, are permitted provided that the following conditions
+//  are met:
+//
+//    Redistributions of source code must retain the above copyright
+//    notice, this list of conditions and the following disclaimer.
+//
+//    Redistributions in binary form must reproduce the above copyright
+//    notice, this list of conditions and the following disclaimer in the
+//    documentation and/or other materials provided with the
+//    distribution.
+//
+//    Neither the name of Texas Instruments Incorporated nor the names of
+//    its contributors may be used to endorse or promote products derived
+//    from this software without specific prior written permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+//  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+//  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+//  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+//  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+//  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+//  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+//  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//  $
+// #############################################################################
 
 //
 // Included Files
@@ -93,10 +93,10 @@ void Device_init(void)
     // Note: This check can be removed if you are not using XTAL as the PLL
     // source
     //
-    if( ((DEVICE_SETCLOCK_CFG & SYSCTL_OSCSRC_M) == SYSCTL_OSCSRC_XTAL) ||
+    if (((DEVICE_SETCLOCK_CFG & SYSCTL_OSCSRC_M) == SYSCTL_OSCSRC_XTAL) ||
         ((DEVICE_SETCLOCK_CFG & SYSCTL_OSCSRC_M) == SYSCTL_OSCSRC_XTAL_SE))
     {
-        while(!Device_verifyXTAL(DEVICE_OSCSRC_FREQ / 1000000))
+        while (!Device_verifyXTAL(DEVICE_OSCSRC_FREQ / 1000000))
         {
             //
             // The actual XTAL frequency does not match DEVICE_OSCSRC_FREQ!!
@@ -114,8 +114,8 @@ void Device_init(void)
             // documentation on steps to reconfigure the controlCARD from 20MHz to
             // 25MHz.
             //
-            DEVICE_DELAY_US(1000);  // Note: oscillator can take up to
-                                    // 10ms to start up per data sheet 
+            DEVICE_DELAY_US(1000); // Note: oscillator can take up to
+                                   // 10ms to start up per data sheet
         }
     }
 
@@ -138,7 +138,7 @@ void Device_init(void)
     // Set up CMCLK to use AUXPLL as the clock source and set the
     // clock divider to 1.
     //
-    SysCtl_setCMClk(SYSCTL_CMCLKOUT_DIV_1,SYSCTL_SOURCE_AUXPLL);
+    SysCtl_setCMClk(SYSCTL_CMCLKOUT_DIV_1, SYSCTL_SOURCE_AUXPLL);
 
     // These asserts will check that the #defines for the clock rates in
     // device.h match the actual rates that have been configured. If they do
@@ -211,7 +211,8 @@ void Device_bootCPU2(uint32_t bootmode)
     // Bring CPU2 out of reset. Wait for CPU2 to go out of reset.
     //
     SysCtl_controlCPU2Reset(SYSCTL_CORE_DEACTIVE);
-    while(SysCtl_isCPU2Reset() == 0x1U);
+    while (SysCtl_isCPU2Reset() == 0x1U)
+        ;
 }
 
 //*****************************************************************************
@@ -253,7 +254,8 @@ void Device_bootCM(uint32_t bootmode)
     // Bring CM out of reset. Wait for CM to go out of reset.
     //
     SysCtl_controlCMReset(SYSCTL_CORE_DEACTIVE);
-    while(SysCtl_isCMReset() == 0x1U);
+    while (SysCtl_isCMReset() == 0x1U)
+        ;
 }
 #endif
 
@@ -267,7 +269,6 @@ void Device_bootCM(uint32_t bootmode)
 //*****************************************************************************
 void Device_enableAllPeripherals(void)
 {
-
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CLA1);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_DMA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TIMER0);
@@ -387,11 +388,10 @@ void Device_enableAllPeripherals(void)
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_DCC2);
 
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAT);
-    
+
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCANA);
 
 #endif
-
 }
 
 //*****************************************************************************
@@ -431,7 +431,6 @@ void Device_initGPIO(void)
 
 void Device_enableUnbondedGPIOPullupsFor176Pin(void)
 {
-
     EALLOW;
     HWREG(GPIOCTRL_BASE + GPIO_O_GPCPUD) = ~0x80000000U;
     HWREG(GPIOCTRL_BASE + GPIO_O_GPDPUD) = ~0xFFFFFFF7U;
@@ -515,10 +514,8 @@ bool Device_verifyXTAL(float freq)
                                      DCC_COUNT1SRC_INTOSC2, 10.0F,
                                      DCC_COUNT0SRC_XTAL, freq,
                                      1.0F, 10.0F, 10.0F));
-
 }
 #endif
-
 
 //*****************************************************************************
 //
