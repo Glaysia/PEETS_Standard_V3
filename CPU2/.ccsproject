@@ -7,6 +7,6 @@
 	<executableActions value=""/>
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=empty_c28x_dual_driverlib_project.projectspec.empty_c28x_dual_driverlib_project_cpu2"/>
-	<origin value="/opt/ti/c2000/C2000Ware_6_00_01_00/driverlib/f2838x/examples/c28x_dual/empty_projects/CCS/empty_c28x_dual_driverlib_project.projectspec"/>
+	<origin value="/home/harry/ti/c2000/C2000Ware_6_00_01_00/driverlib/f2838x/examples/c28x_dual/empty_projects/CCS/empty_c28x_dual_driverlib_project.projectspec"/>
 	<filesToOpen value=""/>
 </projectOptions>
