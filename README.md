@@ -21,6 +21,7 @@ F28388D는 C28x 듀얼 코어(CPU1/CPU2) + Cortex-M4F(CM) 구조입니다. 이 �
 
 ## 문서
 TI 관련 참고 자료와 프로젝트 메모는 `docs/ti/`에 정리되어 있습니다. (`docs/ti/그외문서들.md` 참고)
+기능별 spec 문서는 `docs/specs/`에 정리합니다. 첫 파일럿은 `docs/specs/001-cpu1-cm-handshake/`입니다.
 
 ## 빌드 (CCS)
 1. Code Composer Studio 20.4.0 이상 설치 (ccs2040 레이아웃 기준).
