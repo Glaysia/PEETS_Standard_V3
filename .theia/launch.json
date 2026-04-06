@@ -22,6 +22,15 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "CPU1",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "CPU1",
+                "resourceId": "/CPU1"
+            }
         }
     ]
 }

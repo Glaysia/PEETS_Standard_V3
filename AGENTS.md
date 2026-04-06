@@ -18,6 +18,17 @@
 - `.gitignore`에 맞춰 생성 파일과 빌드 산출물을 취급한다.
 - `.c`를 `.cc`로, 또는 `.cc`를 `.c`로 바꾸지 않는다. 언어 모드 차이를 검증한 경우만 예외다.
 - C와 C++ 소스는 기존 레이아웃을 유지한다. C28x 툴체인에서 언어 혼합은 바로 빌드 문제로 이어진다.
+- CCS compiler/product discovery는 자동 탐색에 맡기지 않는다. `General > Compilers`, `General > Products`, `General > Variables`를 수동으로 맞춘다.
+- 기준 절차와 스크린샷은 `docs/ti/ccs-manual-setup.md`를 우선 참고한다.
+
+## 현재 기준 툴 버전
+- CCS: `20.5.0`
+- SysConfig: `sysconfig_1_27_0`
+- C2000Ware: `C2000Ware26_0_0_0STS`
+- TI CGT ARM: `TI_CGT_ARM_20_2_7LTS`
+- TI CGT C2000: `TI_CGT_C2000_25_11_0LTS`
+- 공식 다운로드 페이지는 `README.md`의 빌드 섹션 링크를 우선 참고한다.
+- 문서와 실제 프로젝트 설정이 다르면 우선 `CPU1/.cproject`, `CPU2/.cproject`, `CM/.cproject`에 기록된 툴체인 계열을 확인한다.
 
 ## 검색 도구 규칙
 - 이 환경에서는 `RIPGREP_CONFIG_PATH`가 CCS가 만든 잘못된 ripgrep 설정 파일을 가리킬 수 있다.
