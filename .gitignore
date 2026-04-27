@@ -28,3 +28,6 @@
 
 # Launch configs (per-user)
 *.launch
+
+# obsidian
+.obsidian/workspace.json
