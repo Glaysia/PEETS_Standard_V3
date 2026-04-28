@@ -7,9 +7,16 @@
 #define CPU1_TO_CM_BOOT_READY_TOKEN 0xC001CAFEUL
 #define CM_TO_CPU1_ACK_READY_TOKEN 0xACCECA11UL
 #define CM_HANDSHAKE_IDLE_DELAY_US 1000U
+#define CPU1_CM_IPC_DRIVERLIB_BUFFER_WORDS 68U
+
+#pragma DATA_SECTION("MSGRAM_CPU1_TO_CM")
+volatile uint32_t g_cpu1_to_cm_ipc_buffer_pad[CPU1_CM_IPC_DRIVERLIB_BUFFER_WORDS];
 
 #pragma DATA_SECTION("MSGRAM_CPU1_TO_CM")
 volatile uint32_t g_cpu1_to_cm_mailbox;
+
+#pragma DATA_SECTION("MSGRAM_CM_TO_CPU1")
+volatile uint32_t g_cm_to_cpu1_ipc_buffer_pad[CPU1_CM_IPC_DRIVERLIB_BUFFER_WORDS];
 
 #pragma DATA_SECTION("MSGRAM_CM_TO_CPU1")
 volatile uint32_t g_cm_to_cpu1_mailbox;
