@@ -8,6 +8,7 @@
 - path:
 - project: `CPU1` / `CPU2` / `CM`
 - language: `C` / `C++`
+- code note path:
 
 ## 단일 책임
 
@@ -68,6 +69,7 @@
 
 - 기능 spec:
 - architecture:
+- code collaborators:
 - board reference:
 - TI 또는 C2000Ware 예제:
 
@@ -84,4 +86,3 @@
 - 생성 폴더와 CCS 산출물을 직접 수정하지 않는다.
 - C28x 쪽은 예외, RTTI, 동적 메모리, virtual, global constructor side effect를 도입하지 않는다.
 - ISR 경로에는 blocking wait, 긴 spin, logging, `printf`를 넣지 않는다.
-

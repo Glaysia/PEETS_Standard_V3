@@ -20,3 +20,25 @@
 아직은 CPU 하나만 켜는 단계다. 매번 디버그를 시작할 때 아래 창이 뜨면 `C28XX_CPU1`만 선택하고 `OK`를 누른다.
 
 ![CCS Debug Core Selection에서 C28XX_CPU1만 선택한 화면](images/ccs-debug-core-selection-cpu1.png)
+
+# Sung TODO - 0428 Today
+
+## CM 통신 살려서 오실로스코프로 확인하기
+
+- [ ] `CPU1 -> CM` 핸드셰이크가 성공하는지 먼저 확인하기
+- [ ] CM UART 핀 기준 확인하기: `UARTA_TX GPIO84`, `UARTA_RX GPIO85`
+- [ ] CM에서 UART TX만 먼저 출력하게 만들기
+- [ ] 오실로스코프로 `GPIO84` TX 파형 확인하기
+- [ ] UART baud rate가 설정값과 맞는지 오실로스코프 time scale로 확인하기
+- [ ] 가능하면 UART loopback 또는 PC serial 수신까지 확인하기
+- [ ] 성공 조건 기록하기: CM ACK 유지, UART TX 파형 관측, CPU1 heartbeat 유지
+
+## CPU2 살리기
+
+- [ ] `CPU1` 단독 부팅과 heartbeat가 유지되는지 먼저 확인하기
+- [ ] `CPU1`에서 `CPU2` boot/release 호출 지점 확인하기
+- [ ] `CPU2`가 `main()`에 진입했는지 debugger 변수로 확인하기
+- [ ] `CPU1 <-> CPU2` MSGRAM token 왕복 경로 만들기
+- [ ] CPU2 heartbeat 또는 timer tick counter 관측하기
+- [ ] CPU1, CPU2, CM 세 코어를 동시에 debug attach 해서 상태 확인하기
+- [ ] 성공 조건 기록하기: CPU2 main 진입, token ACK 관측, CPU1 heartbeat 유지

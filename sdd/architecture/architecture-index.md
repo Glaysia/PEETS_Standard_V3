@@ -8,14 +8,14 @@
 - 기능별 spec이 끝난 뒤에도 남아야 하는 boot, ownership, IPC, memory 기준을 보존한다.
 - CPU1, CPU2, CM 역할 분담과 CCS 프로젝트 구조를 문서화한다.
 
-## 우선 문서 후보
+## 우선 문서
 
 | 문서 | 목적 | 생성 또는 갱신 조건 |
 | --- | --- | --- |
-| `boot-flow.md` | CPU1 단독 부팅, CPU2/CM release, handshake 순서 | boot mode, release sequence, boot-ready flag 변경 |
-| `multicore-ownership.md` | CPU1/CPU2/CM 역할과 peripheral ownership | CPUSEL, pinmux, SysConfig 결과, ownership 변경 |
-| `ipc-routing.md` | CPU 간 IPC flag, MSGRAM, handshake, timeout 구조 | IPC flag 번호, MSGRAM section, routing 변경 |
-| `memory-map.md` | linker command file과 section 배치 기준 | `*.cmd`, MSGRAM, startup section 변경 |
+| [boot-flow](boot-flow.md) | CPU1 단독 부팅, CPU2/CM release, handshake 순서 | boot mode, release sequence, boot-ready flag 변경 |
+| [multicore-ownership](multicore-ownership.md) | CPU1/CPU2/CM 역할과 peripheral ownership | CPUSEL, pinmux, SysConfig 결과, ownership 변경 |
+| [ipc-routing](ipc-routing.md) | CPU 간 IPC flag, MSGRAM, handshake, timeout 구조 | IPC flag 번호, MSGRAM section, routing 변경 |
+| [memory-map](memory-map.md) | linker command file과 section 배치 기준 | `*.cmd`, MSGRAM, startup section 변경 |
 | `ccs-project-layout.md` | CCS/Eclipse 프로젝트 구조와 tool discovery 기준 | `.project`, `.cproject`, compiler/product 기준 변경 |
 
 ## 현재 기준
@@ -31,6 +31,7 @@
 - 초기 bring-up에서는 boot, clock, linker, startup, IPC 변경을 한 architecture 문서에서 한꺼번에 정당화하지 않는다.
 - 아직 검증되지 않은 설계는 `PENDING` 또는 `ASSUMPTION`으로 표시한다.
 - 실제 보드 검증 결과는 기능별 `verification.md`에 남기고, architecture 문서에는 안정된 기준만 승격한다.
+- source file 책임이 바뀌면 관련 [sdd-code-index](../code/sdd-code-index.md) note도 같이 갱신한다.
 
 ## 비대상
 
@@ -38,4 +39,3 @@
 - CCS가 생성한 산출물
 - 일회성 실험 로그
 - 검증 전 임시 pin reassignment
-

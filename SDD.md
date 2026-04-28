@@ -20,7 +20,8 @@
 
 - 기능별 변경은 `docs/specs/NNN-short-name/` 아래에서 시작한다.
 - 장기 참조 구조와 설계 경계는 `sdd/architecture/`와 `sdd/structure/`에 둔다.
-- 위험도가 큰 핵심 소스 파일을 실질 수정할 때만 `sdd/code/<repo-relative-path>.md` 노트를 선택적으로 만든다.
+- editable source를 실질 수정할 때는 `sdd/code/<repo-relative-path>.md` 노트를 같이 만들거나 갱신한다.
+- 큰 bring-up, 리팩터링, 주변장치 통합은 `sdd/plans/` 또는 `docs/specs/`에서 먼저 작업 경계를 고정한다.
 - SDD 허브는 `sdd/sdd-index.md`다.
 
 ## 실질 수정 정의
@@ -49,6 +50,7 @@
 ## 작업 순서
 
 - 실질 수정 전에는 먼저 관련 `docs/specs/` 또는 `sdd/` 문서를 확인한다.
+- 수정할 editable source가 있으면 대응 `sdd/code/` note를 먼저 확인한다.
 - 새 bring-up 기능은 `requirements.md`에서 성공 조건을 먼저 고정한 뒤 `design.md`, `tasks.md`, `verification.md` 순서로 구체화한다.
 - boot, clock, linker, startup, IPC는 초기 단계에서 동시에 바꾸지 않는다.
 - peripheral 추가는 가능하면 CCS/C2000Ware 예제 1개를 기준으로 시작하고, 사용 예제와 검증 방법을 남긴다.
@@ -57,8 +59,9 @@
 ## 레거시 백필 금지
 
 - 기존 전체 코드를 한 번에 SDD로 백필하지 않는다.
-- 새 파일을 만들거나 실질 수정한 파일만 문서화 대상으로 삼는다.
-- 문서화가 작업보다 커지면 기능별 spec과 핵심 architecture 문서만 남기고 code note는 생략할 수 있다.
+- 새 파일을 만들거나 실질 수정한 editable source를 문서화 대상으로 삼는다.
+- `device_not_editable/`와 untouched legacy 파일은 직접 수정하지 않는 한 code note를 강제하지 않는다.
+- 문서화가 작업보다 커지면 기능별 spec과 핵심 architecture 문서를 우선하되, 수정한 editable source의 책임 note는 생략하지 않는다.
 
 ## 우선순위
 
@@ -66,4 +69,3 @@
 2. `docs/specs/`의 기능별 요구사항과 검증 조건
 3. `sdd/architecture/`와 `sdd/structure/`의 장기 설계 기준
 4. 개별 source note
-
