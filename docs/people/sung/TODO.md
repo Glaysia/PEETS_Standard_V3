@@ -25,11 +25,11 @@
 
 ## CM 통신 살려서 오실로스코프로 확인하기
 
-- [ ] `CPU1 -> CM` 핸드셰이크가 성공하는지 먼저 확인하기
-- [ ] CM UART 핀 기준 확인하기: `UARTA_TX GPIO84`, `UARTA_RX GPIO85`
-- [ ] CM에서 UART TX만 먼저 출력하게 만들기
-- [ ] 오실로스코프로 `GPIO84` TX 파형 확인하기
-- [ ] UART baud rate가 설정값과 맞는지 오실로스코프 time scale로 확인하기
+- [X] `CPU1 -> CM` 핸드셰이크가 성공하는지 먼저 확인하기
+- [x] CM UART 핀 기준 확인하기: `UARTA_TX GPIO84`, `UARTA_RX GPIO85`
+- [x] CM에서 UART TX만 먼저 출력하게 만들기
+- [x] 오실로스코프로 `GPIO84` TX 파형 확인하기
+- [x] UART baud rate가 설정값과 맞는지 오실로스코프 time scale로 확인하기
 - [ ] 가능하면 UART loopback 또는 PC serial 수신까지 확인하기
 - [ ] 성공 조건 기록하기: CM ACK 유지, UART TX 파형 관측, CPU1 heartbeat 유지
 
