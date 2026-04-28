@@ -46,6 +46,9 @@
 - [multicore-ownership](architecture/multicore-ownership.md)
 - [ipc-routing](architecture/ipc-routing.md)
 - [memory-map](architecture/memory-map.md)
+- [intercore-source-split](architecture/intercore-source-split.md)
+- [comm-cm-source-split](architecture/comm-cm-source-split.md)
+- [epwm-bringup-boundary](architecture/epwm-bringup-boundary.md)
 
 ## 구조
 

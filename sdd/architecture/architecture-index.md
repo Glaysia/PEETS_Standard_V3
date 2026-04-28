@@ -16,6 +16,9 @@
 | [multicore-ownership](multicore-ownership.md) | CPU1/CPU2/CM 역할과 peripheral ownership | CPUSEL, pinmux, SysConfig 결과, ownership 변경 |
 | [ipc-routing](ipc-routing.md) | CPU 간 IPC flag, MSGRAM, handshake, timeout 구조 | IPC flag 번호, MSGRAM section, routing 변경 |
 | [memory-map](memory-map.md) | linker command file과 section 배치 기준 | `*.cmd`, MSGRAM, startup section 변경 |
+| [intercore-source-split](intercore-source-split.md) | CPU1/CPU2 intercore C 모듈 분리 기준 | boot/release, MSGRAM token, status latch 코드 분리 |
+| [comm-cm-source-split](comm-cm-source-split.md) | CM 통신 C++ 모듈 `comm_cm` 분리 기준 | UART/CAN/Ethernet/USB 진단 통신 코드 분리 |
+| [epwm-bringup-boundary](epwm-bringup-boundary.md) | EPWM 무전력 scope smoke와 모듈 분리 전 경계 | EPWM1~12 출력, safe-off, ownership, ADC/CMPSS 연계 전제 변경 |
 | `ccs-project-layout.md` | CCS/Eclipse 프로젝트 구조와 tool discovery 기준 | `.project`, `.cproject`, compiler/product 기준 변경 |
 
 ## 현재 기준
