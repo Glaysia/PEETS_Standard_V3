@@ -34,51 +34,51 @@ flowchart LR
 - EtherCAT 관련 핀은 점유 범위가 크고, 기존 메모 기준으로도 보드 배선 변경 여지가 거의 없다.
 - 아래 핀은 `MyECAT1`로 예약되어 있으므로 bring-up 근거 없이 재할당하지 않는다.
 
-| GPIO | Interface | Signal | 비고 |
-| --- | --- | --- | --- |
-| GPIO125 | ECAT | ESC_LATCH0 | MyECAT1 |
-| GPIO126 | ECAT | ESC_LATCH1 | MyECAT1 |
-| GPIO127 | ECAT | ESC_SYNC0 | MyECAT1 |
-| GPIO128 | ECAT | ESC_SYNC1 | MyECAT1 |
-| GPIO129 | ECAT | ESC_TX1_ENA | MyECAT1 |
-| GPIO130 | ECAT | ESC_TX1_CLK | MyECAT1 |
-| GPIO131 | ECAT | ESC_TX1_DATA0 | MyECAT1 |
-| GPIO132 | ECAT | ESC_TX1_DATA1 | MyECAT1 |
-| GPIO134 | ECAT | ESC_TX1_DATA2 | MyECAT1 |
-| GPIO135 | ECAT | ESC_TX1_DATA3 | MyECAT1 |
-| GPIO136 | ECAT | ESC_RX1_DV | MyECAT1 |
-| GPIO137 | ECAT | ESC_RX1_CLK | MyECAT1 |
-| GPIO138 | ECAT | ESC_RX1_ERR | MyECAT1 |
-| GPIO139 | ECAT | ESC_RX1_DATA0 | MyECAT1 |
-| GPIO140 | ECAT | ESC_RX1_DATA1 | MyECAT1 |
-| GPIO141 | ECAT | ESC_RX1_DATA2 | MyECAT1 |
-| GPIO142 | ECAT | ESC_RX1_DATA3 | MyECAT1 |
-| GPIO143 | ECAT | ESC_LED_LINK0_ACTIVE | MyECAT1 |
-| GPIO144 | ECAT | ESC_LED_LINK1_ACTIVE | MyECAT1 |
-| GPIO145 | ECAT | ESC_LED_ERR | MyECAT1 |
-| GPIO146 | ECAT | ESC_LED_RUN | MyECAT1 |
-| GPIO147 | ECAT | ESC_LED_STATE_RUN | MyECAT1 |
-| GPIO148 | ECAT | ESC_PHY0_LINKSTATUS | MyECAT1 |
-| GPIO149 | ECAT | ESC_PHY1_LINKSTATUS | MyECAT1 |
-| GPIO150 | ECAT | ESC_I2C_SDA | MyECAT1 |
-| GPIO151 | ECAT | ESC_I2C_SCL | MyECAT1 |
-| GPIO152 | ECAT | ESC_MDIO_CLK | MyECAT1 |
-| GPIO153 | ECAT | ESC_MDIO_DATA | MyECAT1 |
-| GPIO154 | ECAT | ESC_PHY_CLK | MyECAT1 |
-| GPIO155 | ECAT | ESC_PHY_RESETn | MyECAT1 |
-| GPIO156 | ECAT | ESC_TX0_ENA | MyECAT1 |
-| GPIO157 | ECAT | ESC_TX0_CLK | MyECAT1 |
-| GPIO158 | ECAT | ESC_TX0_DATA0 | MyECAT1 |
-| GPIO159 | ECAT | ESC_TX0_DATA1 | MyECAT1 |
-| GPIO160 | ECAT | ESC_TX0_DATA2 | MyECAT1 |
-| GPIO161 | ECAT | ESC_TX0_DATA3 | MyECAT1 |
-| GPIO162 | ECAT | ESC_RX0_DV | MyECAT1 |
-| GPIO163 | ECAT | ESC_RX0_CLK | MyECAT1 |
-| GPIO164 | ECAT | ESC_RX0_ERR | MyECAT1 |
-| GPIO165 | ECAT | ESC_RX0_DATA0 | MyECAT1 |
-| GPIO166 | ECAT | ESC_RX0_DATA1 | MyECAT1 |
-| GPIO167 | ECAT | ESC_RX0_DATA2 | MyECAT1 |
-| GPIO168 | ECAT | ESC_RX0_DATA3 | MyECAT1 |
+| GPIO    | Interface | Signal               | 비고      |
+| ------- | --------- | -------------------- | ------- |
+| GPIO125 | ECAT      | ESC_LATCH0           | MyECAT1 |
+| GPIO126 | ECAT      | ESC_LATCH1           | MyECAT1 |
+| GPIO127 | ECAT      | ESC_SYNC0            | MyECAT1 |
+| GPIO128 | ECAT      | ESC_SYNC1            | MyECAT1 |
+| GPIO129 | ECAT      | ESC_TX1_ENA          | MyECAT1 |
+| GPIO130 | ECAT      | ESC_TX1_CLK          | MyECAT1 |
+| GPIO131 | ECAT      | ESC_TX1_DATA0        | MyECAT1 |
+| GPIO132 | ECAT      | ESC_TX1_DATA1        | MyECAT1 |
+| GPIO134 | ECAT      | ESC_TX1_DATA2        | MyECAT1 |
+| GPIO135 | ECAT      | ESC_TX1_DATA3        | MyECAT1 |
+| GPIO136 | ECAT      | ESC_RX1_DV           | MyECAT1 |
+| GPIO137 | ECAT      | ESC_RX1_CLK          | MyECAT1 |
+| GPIO138 | ECAT      | ESC_RX1_ERR          | MyECAT1 |
+| GPIO139 | ECAT      | ESC_RX1_DATA0        | MyECAT1 |
+| GPIO140 | ECAT      | ESC_RX1_DATA1        | MyECAT1 |
+| GPIO141 | ECAT      | ESC_RX1_DATA2        | MyECAT1 |
+| GPIO142 | ECAT      | ESC_RX1_DATA3        | MyECAT1 |
+| GPIO143 | ECAT      | ESC_LED_LINK0_ACTIVE | MyECAT1 |
+| GPIO144 | ECAT      | ESC_LED_LINK1_ACTIVE | MyECAT1 |
+| GPIO145 | ECAT      | ESC_LED_ERR          | MyECAT1 |
+| GPIO146 | ECAT      | ESC_LED_RUN          | MyECAT1 |
+| GPIO147 | ECAT      | ESC_LED_STATE_RUN    | MyECAT1 |
+| GPIO148 | ECAT      | ESC_PHY0_LINKSTATUS  | MyECAT1 |
+| GPIO149 | ECAT      | ESC_PHY1_LINKSTATUS  | MyECAT1 |
+| GPIO150 | ECAT      | ESC_I2C_SDA          | MyECAT1 |
+| GPIO151 | ECAT      | ESC_I2C_SCL          | MyECAT1 |
+| GPIO152 | ECAT      | ESC_MDIO_CLK         | MyECAT1 |
+| GPIO153 | ECAT      | ESC_MDIO_DATA        | MyECAT1 |
+| GPIO154 | ECAT      | ESC_PHY_CLK          | MyECAT1 |
+| GPIO155 | ECAT      | ESC_PHY_RESETn       | MyECAT1 |
+| GPIO156 | ECAT      | ESC_TX0_ENA          | MyECAT1 |
+| GPIO157 | ECAT      | ESC_TX0_CLK          | MyECAT1 |
+| GPIO158 | ECAT      | ESC_TX0_DATA0        | MyECAT1 |
+| GPIO159 | ECAT      | ESC_TX0_DATA1        | MyECAT1 |
+| GPIO160 | ECAT      | ESC_TX0_DATA2        | MyECAT1 |
+| GPIO161 | ECAT      | ESC_TX0_DATA3        | MyECAT1 |
+| GPIO162 | ECAT      | ESC_RX0_DV           | MyECAT1 |
+| GPIO163 | ECAT      | ESC_RX0_CLK          | MyECAT1 |
+| GPIO164 | ECAT      | ESC_RX0_ERR          | MyECAT1 |
+| GPIO165 | ECAT      | ESC_RX0_DATA0        | MyECAT1 |
+| GPIO166 | ECAT      | ESC_RX0_DATA1        | MyECAT1 |
+| GPIO167 | ECAT      | ESC_RX0_DATA2        | MyECAT1 |
+| GPIO168 | ECAT      | ESC_RX0_DATA3        | MyECAT1 |
 
 ### Ethernet
 
@@ -163,20 +163,20 @@ flowchart TB
     end
 ```
 
-| GPIO | Interface | Signal | 비고 |
-| --- | --- | --- | --- |
-| GPIO32 | I2CA | I2CA_SDA | MyI2C1 |
-| GPIO33 | I2CA | I2CA_SCL | MyI2C1 |
-| GPIO31 | MCAN | MCAN_TX | MyMCAN1 |
-| GPIO36 | MCAN | MCAN_RX | MyMCAN1 |
-| GPIO34 | SCIA | SCIA_TX | CPU1 |
-| GPIO49 | SCIA | SCIA_RX | CPU1 |
-| GPIO71 | SCIB | SCIB_RX | CPU2 |
-| GPIO86 | SCIB | SCIB_TX | CPU2 |
-| GPIO76 | SCID | SCID_TX | MySCI1 |
-| GPIO77 | SCID | SCID_RX | MySCI1 |
-| GPIO84 | UARTA | UARTA_TX | MyUART1 |
-| GPIO85 | UARTA | UARTA_RX | MyUART1 |
+| GPIO   | Interface | Signal   | 비고      |
+| ------ | --------- | -------- | ------- |
+| GPIO32 | I2CA      | I2CA_SDA | MyI2C1  |
+| GPIO33 | I2CA      | I2CA_SCL | MyI2C1  |
+| GPIO31 | MCAN      | MCAN_TX  | MyMCAN1 |
+| GPIO36 | MCAN      | MCAN_RX  | MyMCAN1 |
+| GPIO34 | SCIA      | SCIA_TX  | CPU1    |
+| GPIO49 | SCIA      | SCIA_RX  | CPU1    |
+| GPIO71 | SCIB      | SCIB_RX  | CPU2    |
+| GPIO86 | SCIB      | SCIB_TX  | CPU2    |
+| GPIO76 | SCID      | SCID_TX  | MySCI1  |
+| GPIO77 | SCID      | SCID_RX  | MySCI1  |
+| GPIO84 | UARTA     | UARTA_TX | MyUART1 |
+| GPIO85 | UARTA     | UARTA_RX | MyUART1 |
 
 ## 버퍼 제어 GPIO
 
