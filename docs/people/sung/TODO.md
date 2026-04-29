@@ -46,3 +46,21 @@
 ## Altium 계정 만들기
 - [ ] 서울시립대 uos.ac.kr 이메일로 계정 만들기
 - [ ] 워크스페이스 찬희 박 신청하기 << 이번 주
+
+# Sung TODO - 0429 Today
+
+altium에서 실보드 schemetic pdf 구해서 저장하기
+schemetic으로 gpio enable 핀 알아내기
+ev보드에서 먼저 pwm 확인하고 컨트롤 보드 버퍼끝나면 컨트롤 보드에서도 pwm 확인
+*납땜 수정 가능성 있음
+altium 수정사항 필요(먼 미래)
+    1) 단자 풋프린트 정상화
+    2) 에뮬레이터 버전 업그레이드
+    3) 인터페이스 보드 제작(ethercat, ethernet)
+
+# Sung TODO - 0430 Today
+
+ 열풍기로 컨트롤 보드 MCU 떼기
+ 3.3V 레귤레이터 교체하고 후단 3.3V 나오는지 확인 
+ 3.3V 나오는거 확인했으면 MCU 다시 장착
+
