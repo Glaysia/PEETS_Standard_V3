@@ -35,17 +35,17 @@
 
 ## CPU2 살리기
 
-- [ ] `CPU1` 단독 부팅과 heartbeat가 유지되는지 먼저 확인하기
-- [ ] `CPU1`에서 `CPU2` boot/release 호출 지점 확인하기
-- [ ] `CPU2`가 `main()`에 진입했는지 debugger 변수로 확인하기
-- [ ] `CPU1 <-> CPU2` MSGRAM token 왕복 경로 만들기
-- [ ] CPU2 heartbeat 또는 timer tick counter 관측하기
-- [ ] CPU1, CPU2, CM 세 코어를 동시에 debug attach 해서 상태 확인하기
-- [ ] 성공 조건 기록하기: CPU2 main 진입, token ACK 관측, CPU1 heartbeat 유지
+- [x] `CPU1` 단독 부팅과 heartbeat가 유지되는지 먼저 확인하기
+- [x] `CPU1`에서 `CPU2` boot/release 호출 지점 확인하기
+- [x] `CPU2`가 `main()`에 진입했는지 debugger 변수로 확인하기
+- [x] `CPU1 <-> CPU2` MSGRAM token 왕복 경로 만들기
+- [x] CPU2 heartbeat 또는 timer tick counter 관측하기
+- [x] CPU1, CPU2, CM 세 코어를 동시에 debug attach 해서 상태 확인하기
+- [x] 성공 조건 기록하기: CPU2 main 진입, token ACK 관측, CPU1 heartbeat 유지
 
 ## Altium 계정 만들기
-- [ ] 서울시립대 uos.ac.kr 이메일로 계정 만들기
-- [ ] 워크스페이스 찬희 박 신청하기 << 이번 주
+- [x] 서울시립대 uos.ac.kr 이메일로 계정 만들기
+- [x] 워크스페이스 찬희 박 신청하기 << 이번 주
 
 # Sung TODO - 0429 Today
 

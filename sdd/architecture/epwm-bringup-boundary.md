@@ -39,14 +39,14 @@
 
 ## Minimum EPWM Smoke Set
 
-| 항목 | 최소 확인 |
-| --- | --- |
-| Channel coverage | EPWM1~12 A/B 출력 핀 scope 관측 |
-| Independent output | A/B가 각 compare 설정을 반영하는지 확인 |
-| Complementary output | deadband 포함 보완 파형 확인 |
-| Phase shift | master/slave phase offset 확인 |
-| Safe-off | enable 전 출력 off, trip/disable 시 safe state 확인 |
-| Runtime update | duty 또는 period 변경이 bounded 경로로 반영되는지 확인 |
+| 항목                   | 최소 확인                                         |
+| -------------------- | --------------------------------------------- |
+| Channel coverage     | EPWM1~12 A/B 출력 핀 scope 관측                    |
+| Independent output   | A/B가 각 compare 설정을 반영하는지 확인                   |
+| Complementary output | deadband 포함 보완 파형 확인                          |
+| Phase shift          | master/slave phase offset 확인                  |
+| Safe-off             | enable 전 출력 off, trip/disable 시 safe state 확인 |
+| Runtime update       | duty 또는 period 변경이 bounded 경로로 반영되는지 확인       |
 
 ## Debug And Verification
 
