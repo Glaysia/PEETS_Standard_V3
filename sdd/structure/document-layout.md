@@ -57,6 +57,8 @@
 - `CM/source_editable/main_cm.cc`
 - `CPU2/source_editable/main_cpu2.c`
 - `CPU1/source_editable/pwm.cpp`
+- `CPU1/source_editable/epwm_ctrl.cpp`
+- `CPU1/source_editable/ctrl_loop.cpp`
 - `CPU1/source_editable/pinmux.c`
 
 ## Plan note 생성 조건

@@ -13,6 +13,7 @@
 
 ## 현재 계획 후보
 
+- [epwm-control-source-split](epwm-control-source-split.md): `pwm.cpp`를 `epwm_ctrl.cpp`로 rename하고 `ctrl_loop.cpp`를 분리하는 CPU1 테스트 단계 소스 정리
 - `docs/specs/002-cm-uarta-hello/`: CM UART TX/RX scope bring-up
 - `docs/specs/003-cpu1-cpu2-handshake/`: CPU1이 CPU2를 release하고 MSGRAM token 왕복 확인
 - `docs/specs/004-epwm-scope-smoke/`: EPWM1~12 무전력 scope smoke

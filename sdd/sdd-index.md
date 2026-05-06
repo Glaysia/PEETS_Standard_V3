@@ -19,7 +19,9 @@
 - [CPU1 main_cpu1.c](code/CPU1/source_editable/main_cpu1.c.md)
 - [CM main_cm.cc](code/CM/source_editable/main_cm.cc.md)
 - [CPU2 main_cpu2.c](code/CPU2/source_editable/main_cpu2.c.md)
-- [CPU1 pwm.cpp](code/CPU1/source_editable/pwm.cpp.md)
+- [CPU1 pwm.cpp current](code/CPU1/source_editable/pwm.cpp.md)
+- [CPU1 epwm_ctrl.cpp planned](code/CPU1/source_editable/epwm_ctrl.cpp.md)
+- [CPU1 ctrl_loop.cpp planned](code/CPU1/source_editable/ctrl_loop.cpp.md)
 - [CPU1 pinmux.c](code/CPU1/source_editable/pinmux.c.md)
 
 ## 기능별 spec
@@ -50,15 +52,16 @@
 - [comm-cm-source-split](architecture/comm-cm-source-split.md)
 - [epwm-bringup-boundary](architecture/epwm-bringup-boundary.md)
 
+## 계획
+
+- [sdd-plans-index](plans/sdd-plans-index.md): 큰 bring-up, 리팩터링, 주변장치 통합 계획 허브
+- [epwm-control-source-split](plans/epwm-control-source-split.md)
+
 ## 구조
 
 - [document-layout](structure/document-layout.md): `docs/specs/`, `sdd/architecture/`, `sdd/code/` 역할 분리
 - [agent-sdd-workflow](structure/agent-sdd-workflow.md): 에이전트 작업 루프와 금지 패턴
 - [commit-policy](structure/commit-policy.md): 커밋과 SDD note 동반 규칙
-
-## 계획
-
-- [sdd-plans-index](plans/sdd-plans-index.md): 큰 bring-up, 리팩터링, 주변장치 통합 계획 허브
 
 ## 템플릿
 

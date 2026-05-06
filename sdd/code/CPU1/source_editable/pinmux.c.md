@@ -69,7 +69,8 @@
 - board reference: [board-io-reference](../../../../docs/board/board-io-reference.md)
 - code collaborators:
   - [CPU1 main_cpu1.c](main_cpu1.c.md)
-  - [CPU1 pwm.cpp](pwm.cpp.md)
+  - [CPU1 pwm.cpp current](pwm.cpp.md)
+  - [CPU1 epwm_ctrl.cpp planned](epwm_ctrl.cpp.md)
 
 ## 관련 테스트와 검증
 

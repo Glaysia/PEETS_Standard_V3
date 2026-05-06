@@ -41,7 +41,9 @@
 - [CPU1 main_cpu1.c](CPU1/source_editable/main_cpu1.c.md)
 - [CM main_cm.cc](CM/source_editable/main_cm.cc.md)
 - [CPU2 main_cpu2.c](CPU2/source_editable/main_cpu2.c.md)
-- [CPU1 pwm.cpp](CPU1/source_editable/pwm.cpp.md)
+- [CPU1 pwm.cpp current](CPU1/source_editable/pwm.cpp.md)
+- [CPU1 epwm_ctrl.cpp planned](CPU1/source_editable/epwm_ctrl.cpp.md)
+- [CPU1 ctrl_loop.cpp planned](CPU1/source_editable/ctrl_loop.cpp.md)
 - [CPU1 pinmux.c](CPU1/source_editable/pinmux.c.md)
 
 ## 운영 메모
@@ -49,3 +51,4 @@
 - 이 인덱스는 전체 코드 백필 목록이 아니다.
 - 앞으로 실질 수정하는 editable source부터 대응 note를 늘린다.
 - 아직 source file이 없는 planned split note는 활성 plan이 직접 가리키는 경우에만 허용한다.
+- `epwm_ctrl.cpp.md`, `ctrl_loop.cpp.md`는 [epwm-control-source-split](../plans/epwm-control-source-split.md) 계획에 묶인 planned note다.

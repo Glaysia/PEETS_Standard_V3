@@ -6,8 +6,11 @@
 
 - v1 범위는 `EPWM1~12`의 무전력 scope smoke다.
 - 목표는 제품용 제어기 완성이 아니라 A/B 출력, 주파수, duty, deadtime, phase shift, safe-off를 관측 가능한 기준선으로 고정하는 것이다.
-- EPWM 초기 구현은 기존 `CPU1/include_editable/pwm.h`, `CPU1/source_editable/pwm.cpp` 후보 경로에서 시작할 수 있다.
-- 이 단계에서 EPWM을 별도 production module로 완전히 분리하지 않아도 된다.
+- 현재 테스트 단계의 EPWM 구현은 CPU1에 둔다.
+- 다음 소스 정리에서 기존 `CPU1/source_editable/pwm.cpp`는 `CPU1/source_editable/epwm_ctrl.cpp`로 rename한다.
+- `epwm_ctrl.*`는 C2000 EPWM peripheral 제어 계층만 맡는다: time-base, compare, phase, deadband, trip, sync, safe-off.
+- 제어 law와 command 생성은 별도 `CPU1/source_editable/ctrl_loop.cpp` 후보 파일에서 시작한다.
+- 이 단계에서 CPU2로 runtime update ownership을 넘기지 않는다. CPU2 이관은 CPU1 테스트 기준선이 닫힌 뒤 별도 spec으로 다룬다.
 - 다만 EPWM register write, pinmux, ADC trigger, CMPSS/TZ를 한 변경에 섞지 않는다.
 
 ## Ownership Assumptions
@@ -32,8 +35,11 @@
 - pinmux 자체는 EPWM bring-up 코드에서 다시 정의하지 않는다.
 - peripheral clock과 pinmux는 기존 `Device_init()`, `PinMux_init()` 흐름을 우선 사용한다.
 - EPWM 설정은 driverlib 기반으로 작성한다.
+- `epwm_ctrl.*`는 EPWM register write wrapper이고, `ctrl_loop.*`는 duty/period/phase command를 계산하는 계층이다.
+- bring-up 중 C ABI 함수 이름은 필요하면 유지한다. 예: `pwm_smoke_init()`, `pwm_smoke_force_safe_off()`, `pwm_smoke_release_outputs()`.
 - C28x C++03 정책을 따른다: 예외, RTTI, 동적 메모리, 가상 함수, 전역 생성자 side effect를 사용하지 않는다.
 - 하드웨어 side effect는 `init`, `apply`, `start`, `stop`, `enable`, `disable`, `trip`, `clear`처럼 호출 지점이 보이는 함수에 둔다.
+- constructor/destructor는 hardware를 건드리지 않는다.
 - ISR 경로에는 초기 bring-up용 긴 polling, logging, blocking wait를 넣지 않는다.
 - ADC trigger와 CMPSS/TZ 보호 체인은 EPWM scope smoke가 닫힌 뒤 별도 spec으로 붙인다.
 
@@ -64,3 +70,4 @@
 - `docs/board/pwm-architecture.md`
 - `docs/board/board-io-reference.md`
 - `docs/specs/004-epwm-scope-smoke/` 예정
+- [epwm-control-source-split](../plans/epwm-control-source-split.md)

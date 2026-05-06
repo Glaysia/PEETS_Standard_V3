@@ -79,7 +79,9 @@
   - [memory-map](../../../architecture/memory-map.md)
 - code collaborators:
   - [CM main_cm.cc](../../CM/source_editable/main_cm.cc.md)
-  - [CPU1 pwm.cpp](pwm.cpp.md)
+  - [CPU1 pwm.cpp current](pwm.cpp.md)
+  - [CPU1 epwm_ctrl.cpp planned](epwm_ctrl.cpp.md)
+  - [CPU1 ctrl_loop.cpp planned](ctrl_loop.cpp.md)
 
 ## 관련 테스트와 검증
 

@@ -31,7 +31,9 @@
 ## Related Code Notes
 
 - [CPU1 pinmux.c](../code/CPU1/source_editable/pinmux.c.md)
-- [CPU1 pwm.cpp](../code/CPU1/source_editable/pwm.cpp.md)
+- [CPU1 pwm.cpp current](../code/CPU1/source_editable/pwm.cpp.md)
+- [CPU1 epwm_ctrl.cpp planned](../code/CPU1/source_editable/epwm_ctrl.cpp.md)
+- [CPU1 ctrl_loop.cpp planned](../code/CPU1/source_editable/ctrl_loop.cpp.md)
 - [CPU2 main_cpu2.c](../code/CPU2/source_editable/main_cpu2.c.md)
 - [CM main_cm.cc](../code/CM/source_editable/main_cm.cc.md)
 
