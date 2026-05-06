@@ -2,25 +2,21 @@
 
 ## Summary
 
-목표는 2주 안에 제품 완성이 아니라, 새 PCB에서 CPU1/CPU2/CM, 주요 I/O, PWM, ADC, 보호 체인, 저전압 open-loop까지 전부 smoke/bench 검증하는 것이다. 부사수에게는 기능 하나당 “예제 출
+목표는 2주 안에 제품 완성이 아니라, 새 PCB에서 CPU1/CPU2/CM, 주요 I/O, PWM 구조 고도화, ADC, 보호 체인, 저전압 open-loop까지 전부 smoke/bench 검증하는 것이다. 부사수에게는 기능 하나당 “예제 출
 처, 코드 변경, 실제 관측, 성공 조건”을 남기게 한다.
 
-순서는 CPU1 기준선 -> CM -> CPU2 -> GPIO/통신 smoke -> PWM -> ADC -> CMPSS/TZ -> 저전압 open-loop로 고정한다. EtherCAT은 PHY가 없으므로 이번 2주 범위에서 제외한다.
+순서는 CPU1 기준선 -> CM -> CPU2 -> GPIO/통신 smoke -> PWM scope smoke -> PWM 제어 구조 고도화 -> ADC -> CMPSS/TZ -> 저전압 open-loop로 고정한다. EtherCAT은 PHY가 없으므로 이번 2주 범위에서 제외한다.
 
 ## Key Changes
 
 - CPU1은 시스템 마스터로 유지한다: boot, pinmux, safe GPIO, CPU2/CM release, fault latch.
-- CPU2는 fast control 준비용으로 살린다: boot handshake, timer/ISR heartbeat, 이후 PWM/ADC update skeleton.
+- CPU2는 fast control 준비용으로 살린다: boot handshake, timer/ISR heartbeat, 이후 PWM/ADC update skeleton. 다만 현재 테스트 단계에서는 PWM 제어 구조를 CPU1에서 먼저 고정한다.
 - CM은 먼저 UART smoke까지만 한다: CPU1 -> CM handshake 성공 뒤 UARTA TX/RX 확인.
-- PWM은 제품 제어기 완성이 아니라 무전력 scope 검증을 목표로 한다: EPWM1~12, A/B 출력, deadtime, phase shift, trip safe-off.
-- ADC/CMPSS/TZ는 저전압 실험 전에 반드시 닫는다: EPWM SOCA/SOCB -> ADCINT, CMPSS/DAC -> ePWM XBAR -> TZ/DC -> PWM safe state.
+- PWM은 제품 제어기 완성이 아니라 무전력 scope 검증과 제어 구조 고도화를 목표로 한다: EPWM1~12, A/B 출력, deadtime, phase shift, trip safe-off, duty/period/phase runtime update.
+- ADC/CMPSS/TZ는 PWM 제어 구조가 정리된 뒤 저전압 실험 전에 반드시 닫는다: EPWM SOCA/SOCB -> ADCINT, CMPSS/DAC -> ePWM XBAR -> TZ/DC -> PWM safe state.
 - 모든 실질 변경은 docs/specs/NNN-*에 요구사항, 설계, 작업, 검증 결과를 남긴다.
 
 ## 2주 작업 목록
-
-### 2026-04-29 성훈 작업 큐
-
-- ![2026-04-29 성훈 작업 큐](2026-04-29-sung-work-queue.md)
 
 ### 기준선 고정
 
@@ -57,15 +53,21 @@
 
 ### 무전력 PWM bring-up
 
-- CPU1/include_editable/pwm.h, CPU1/source_editable/pwm.cpp의 현재 C++ smoke를 실제 ePWM driverlib 기반으로 교체하는 계획을 세운다.
+- 현재 테스트 단계에서는 CPU1에서 PWM bring-up과 runtime update 실험을 진행한다.
+- CPU1/source_editable/pwm.cpp는 다음 정리에서 CPU1/source_editable/epwm_ctrl.cpp로 rename한다.
+- CPU1/source_editable/ctrl_loop.cpp를 추가해 duty, period, phase command 생성을 EPWM register write와 분리한다.
+- epwm_ctrl는 EPWM hardware wrapper, channel/group, compare/period/phase/deadband/trip 적용만 맡는다.
+- ctrl_loop는 제어 law와 command 생성만 맡고 EPWM register를 직접 쓰지 않는다.
 - EPWM1~12 전체를 safe-off first로 초기화한다.
 - TBCLKSYNC off -> profile apply -> trip/safe state -> TBCLKSYNC on 순서를 지킨다.
 - Scope로 EPWM1~12 A/B가 핀에 나오는지 확인한다.
 - 기본 케이스는 3개로 충분하다: independent, complementary + deadtime, master/slave phase shift.
-- 성공 조건: 전력부 미인가 상태에서 주파수, duty, deadtime, phase shift가 재현된다.
+- ADC로 넘어가기 전에 debugger 또는 고정 test 변수로 duty, period, phase runtime update를 각각 독립 확인한다.
+- 성공 조건: 전력부 미인가 상태에서 주파수, duty, deadtime, phase shift, safe-off, runtime update가 재현된다.
 
 ### ADC trigger chain
 
+- PWM 제어 구조 고도화가 끝나기 전에는 ADC trigger chain으로 넘어가지 않는다.
 - ePWM SOCA/SOCB를 ADC trigger source로 잡는다.
 - ADCINT 기준 ISR cadence를 만든다.
 - ADC raw result buffer를 CPU2 또는 CPU1에서 읽고 debugger로 확인한다.
@@ -107,3 +109,4 @@
 - 전력 테스트는 무전력 검증과 저전압 current-limited 조건까지만 한다.
 - CM UART는 CPU1 -> CM handshake 성공 후에만 붙인다.
 - PWM/ADC/CMPSS/TZ는 한 커밋에 섞지 않고 기능별로 나눈다.
+- ADC는 PWM scope smoke와 `epwm_ctrl/ctrl_loop` 기반 runtime update가 확인된 뒤 붙인다.
