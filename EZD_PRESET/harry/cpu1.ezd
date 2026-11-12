@@ -1,0 +1,28 @@
+[Basic Page]
+m_strPrjFileName = C:\Users\UOS\Projects\CProjects\PEETS_Standard_V3\EZD_PRESET\harry\cpu1.ezd
+m_straOutFileName[0] = C:\Users\UOS\Projects\CProjects\PEETS_Standard_V3\CPU1\CPU1_FLASH\CPU1.out
+m_straOutFileName[1] = C:\Users\UOS\Projects\CProjects\PEETS_Standard_V3\CPU2\CPU2_FLASH\CPU2.out
+m_straOutFileName[2] = 
+m_straOutFileName[3] = 
+m_strDSPType = TMS320F28388D CPU1
+m_strCommPort = SCI
+m_strDebuggingModel = dwarf
+m_strDSPOption = 
+m_baIsCoreEz[0] = 1
+m_baIsCoreEz[1] = 0
+m_baIsCoreEz[2] = 0
+m_baIsCoreEz[3] = 0
+[Parallel & RS232 Port]
+m_strProtocol = Normal
+[USB Port]
+m_uBPS = 115200
+m_uWaitMoreMicroTime = 1500
+m_bIsWirelessEnabled = 0
+[Miscellaneous]
+m_bVariableAutoSeek = 1
+m_bStopWhenSuccessiveFail = 0
+m_bDisplayPrintableChar = 0
+m_bHighlightChange = 1
+m_strEditor = 
+[Project Information]
+m_uVersion = 1270
